@@ -39,3 +39,15 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 a,button,.executor-coming,.script-featured{-webkit-tap-highlight-color:transparent}
 a:focus-visible,button:focus-visible,.executor-coming:focus-visible{outline:2px solid rgba(232,197,45,.8);outline-offset:4px}
 @media(hover:none),(prefers-reduced-motion:reduce){body::before{display:none}.card:hover,.social-card:hover{transform:none}.card::after,.stat::after,.live-item::after,.social-card::after,.panel::after,.secondary::after,.nav-cta::after,.primary::after{display:none}}
+
+
+/* FIX: keep the ambient pointer light visible above the page background */
+body::before{display:none!important}
+body{
+ background:
+  radial-gradient(520px circle at var(--pointer-x,50vw) var(--pointer-y,20vh),rgba(255,255,255,.075),rgba(232,197,45,.025) 38%,transparent 72%),
+  radial-gradient(ellipse at 50% 0%,rgba(232,197,45,.07),transparent 42%),
+  #090909!important;
+}
+.card::after,.stat::after,.live-item::after,.social-card::after,.panel::after,.secondary::after,.nav-cta::after,.primary::after{z-index:2}
+.card>* ,.stat>* ,.live-item>* ,.social-card>* ,.panel>* ,.secondary>* ,.nav-cta>* ,.primary>*{position:relative;z-index:1}
