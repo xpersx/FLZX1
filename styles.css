@@ -42,12 +42,10 @@ a:focus-visible,button:focus-visible,.executor-coming:focus-visible{outline:2px 
 
 
 /* FIX: keep the ambient pointer light visible above the page background */
-body::before{display:none!important}
+body::before{display:block!important;position:fixed;inset:0;z-index:0;pointer-events:none;opacity:1;background:radial-gradient(560px circle at var(--pointer-x,50vw) var(--pointer-y,20vh),rgba(255,255,255,.085),rgba(232,197,45,.035) 34%,transparent 72%)}
+body > header,body > main,body > section,body > footer{position:relative;z-index:1}
 body{
- background:
-  radial-gradient(520px circle at var(--pointer-x,50vw) var(--pointer-y,20vh),rgba(255,255,255,.075),rgba(232,197,45,.025) 38%,transparent 72%),
-  radial-gradient(ellipse at 50% 0%,rgba(232,197,45,.07),transparent 42%),
-  #090909!important;
+ background:radial-gradient(ellipse at 50% 0%,rgba(232,197,45,.07),transparent 42%),#090909!important;
 }
 .card::after,.stat::after,.live-item::after,.social-card::after,.panel::after,.secondary::after,.nav-cta::after,.primary::after{z-index:2}
 .card>* ,.stat>* ,.live-item>* ,.social-card>* ,.panel>* ,.secondary>* ,.nav-cta>* ,.primary>*{position:relative;z-index:1}
