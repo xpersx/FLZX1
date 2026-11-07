@@ -13,5 +13,21 @@ document.addEventListener('DOMContentLoaded',()=>{
  const banner=document.createElement('aside');banner.id='flz-cookie-banner';banner.setAttribute('role','dialog');banner.setAttribute('aria-label','Aviso de privacidad');banner.innerHTML='<div class="cookie-copy"><strong>Privacidad en FLZ</strong><p>Este sitio utiliza almacenamiento local para recordar que cerraste este aviso. No hay herramientas propias de analítica ni publicidad integradas actualmente. <a href="legal.html#privacidad">Lee nuestra política de privacidad.</a></p></div><button type="button" id="flz-cookie-accept">Entendido</button>';document.body.appendChild(banner);if(!dismissed)banner.classList.add('show');
  banner.querySelector('#flz-cookie-accept').addEventListener('click',()=>{try{localStorage.setItem(cookieKey,'dismissed');}catch(error){}banner.classList.remove('show');});
  const settings=document.getElementById('open-cookie-settings');if(settings)settings.addEventListener('click',()=>{banner.classList.add('show');banner.querySelector('strong').textContent='Preferencias de privacidad';});
+
+ // Soft pointer tracking for the ambient glass light.
+ const finePointer=window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+ if(finePointer){
+   document.addEventListener('pointermove',event=>{
+     document.documentElement.style.setProperty('--pointer-x',event.clientX+'px');
+     document.documentElement.style.setProperty('--pointer-y',event.clientY+'px');
+     const target=event.target.closest('.card,.stat,.live-item,.social-card,.panel,.secondary,.nav-cta,.primary');
+     if(target){
+       const rect=target.getBoundingClientRect();
+       target.style.setProperty('--local-x',(event.clientX-rect.left)+'px');
+       target.style.setProperty('--local-y',(event.clientY-rect.top)+'px');
+     }
+   },{passive:true});
+ }
+
  if(location.hash==='#OBG-script')showScriptDetails();
 });
