@@ -115,35 +115,6 @@ footer{border-top:1px solid #202020;padding:23px 0;color:#777;font-size:10px}
 @media(max-width:760px){.obg-cover{height:175px}.obg-cover-title{font-size:56px}}
 
 
-/* FLZ connected ecosystem */
-.neural-panel{display:grid;grid-template-columns:.8fr 1.2fr;align-items:center;gap:20px;min-height:330px;padding:30px;border:1px solid #332d19;border-radius:10px;background:linear-gradient(120deg,#111 0%,#0b0b0b 65%,#151207 100%);overflow:hidden}
-.neural-copy{position:relative;z-index:2;max-width:340px}
-.neural-overline{font-size:8px;font-weight:800;letter-spacing:2px;color:#bda744}
-.neural-copy h3{margin:17px 0 12px;font:800 clamp(25px,4vw,38px)/1.2 Orbitron,sans-serif;letter-spacing:-1px}
-.neural-copy h3 span{color:var(--yellow)}
-.neural-copy p{max-width:310px;color:#999;font-size:12px;line-height:1.8}
-.neural-status{display:inline-flex;align-items:center;gap:8px;margin-top:17px;padding:8px 10px;border:1px solid #3c351d;border-radius:4px;color:#cbb85c;font-size:8px;font-weight:800;letter-spacing:1px}
-.neural-status i{width:6px;height:6px;border-radius:50%;background:#d8bd4b;box-shadow:0 0 8px #d8bd4b66}
-.brain-visual{height:290px;position:relative;display:grid;place-items:center;min-width:0}
-.brain-visual svg{position:relative;z-index:1;width:min(100%,440px);height:100%;overflow:visible}
-.brain-orbit{position:absolute;border:1px solid #c7a92e22;border-radius:50%;pointer-events:none}
-.orbit-one{width:230px;height:230px}
-.orbit-two{width:285px;height:285px;border-style:dashed;opacity:.5}
-.brain-label{position:absolute;z-index:2;display:flex;align-items:center;gap:7px;padding:7px 9px;border:1px solid #514516;border-radius:4px;background:#111e;color:#d8d0a7;font-size:8px;font-weight:800;letter-spacing:.8px;white-space:nowrap}
-.brain-label b{color:var(--yellow);font:700 9px Orbitron,sans-serif}
-.label-executors{top:23px;left:0}
-.label-scripts{top:23px;right:0}
-.label-tools{bottom:20px;left:0}
-.label-hub{bottom:20px;right:0}
-.brain-lines path{stroke-dasharray:5 6;animation:brain-flow 9s linear infinite}
-@keyframes brain-flow{to{stroke-dashoffset:-88}}
-@media(max-width:760px){
- .neural-panel{grid-template-columns:1fr;padding:22px 16px;gap:8px}
- .neural-copy{max-width:none}
- .neural-copy p{max-width:440px}
- .brain-visual{height:260px;margin-top:8px}
- .orbit-one{width:190px;height:190px}.orbit-two{width:235px;height:235px}
- .brain-label{font-size:7px;padding:6px 7px}
- .label-executors,.label-tools{left:0}.label-scripts,.label-hub{right:0}
-}
-@media(max-width:390px){.brain-visual{height:225px}.brain-label{font-size:6px;letter-spacing:.3px}.orbit-one{width:165px;height:165px}.orbit-two{width:205px;height:205px}}
+
+#detail[hidden]{display:none!important}
+#home[hidden]{display:none!important}
