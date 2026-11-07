@@ -34,7 +34,7 @@ footer{border-top:1px solid #ffffff12;padding:25px 0;color:#777780;font-size:11p
 @media(max-width:760px){.links{gap:12px}.links a{font-size:11px}.nav-cta{display:none}.hero{padding:70px 0 45px}.cards{grid-template-columns:1fr}.section-top{display:block}.detail-grid{grid-template-columns:1fr}.stats{gap:7px}.stat{padding:12px 5px}.stat strong{font-size:16px}}
 @media(max-width:430px){.links{gap:8px}.links a{font-size:10px}.brand{font-size:20px}}
 
-/* Featured OBG script cover */
+/* Featured FLZ script cover */
 .script-featured{overflow:hidden}
 .script-cover{height:150px;border:1px solid #ff303b55;border-radius:10px;margin:0 0 18px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(circle at 50% 45%,#ff202b44,transparent 48%),linear-gradient(135deg,#21070a,#090909 65%)}
 .script-cover:before,.script-cover:after{content:"";position:absolute;width:180%;height:1px;background:linear-gradient(90deg,transparent,#ff303b99,transparent);transform:rotate(-22deg)}
@@ -44,7 +44,7 @@ footer{border-top:1px solid #ffffff12;padding:25px 0;color:#777780;font-size:11p
 .cover-title span{color:#ff202b}.cover-subtitle{position:relative;color:#ff737b;font-size:9px;font-weight:800;letter-spacing:4px;margin-top:5px}
 
 
-/* OBG motion upgrade */
+/* FLZ motion upgrade */
 :root{scroll-padding-top:88px}
 body{overflow-x:hidden}
 body:after{content:"";position:fixed;z-index:-1;inset:-20%;pointer-events:none;background:radial-gradient(circle at var(--mx,50%) var(--my,25%),#ff202b12,transparent 24%);transition:background-position .18s ease}
