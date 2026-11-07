@@ -31,7 +31,14 @@ document.addEventListener('DOMContentLoaded',()=>{
   updateTime();
   window.setInterval(updateTime,1000);
 
-  document.querySelectorAll('.executor-coming').forEach(card=>{\n    card.addEventListener('click',()=>alert('Esta sección estará disponible próximamente.'));\n    card.addEventListener('keydown',event=>{\n      if(event.key==='Enter'||event.key===' '){event.preventDefault();alert('Esta sección estará disponible próximamente.');}\n    });\n  });\n\n  const featured=document.querySelector('.script-featured');
+  document.querySelectorAll('.executor-coming').forEach(card=>{
+    card.addEventListener('click',()=>alert('Esta sección estará disponible próximamente.'));
+    card.addEventListener('keydown',event=>{
+      if(event.key==='Enter'||event.key===' '){event.preventDefault();alert('Esta sección estará disponible próximamente.');}
+    });
+  });
+
+  const featured=document.querySelector('.script-featured');
   if(featured){
     featured.addEventListener('click',event=>{
       if(event.target.closest('a,button'))return;
