@@ -3,7 +3,7 @@ function showScriptDetails(){
   const detail=document.getElementById('detail');
   if(home)home.hidden=true;
   if(detail)detail.hidden=false;
-  history.replaceState(null,'','#FLZ-script');
+  history.replaceState(null,'','#OBG-script');
   window.scrollTo({top:0,behavior:'smooth'});
 }
 function showHome(){
@@ -65,5 +65,5 @@ document.addEventListener('DOMContentLoaded',()=>{
     banner.classList.add('show');
     banner.querySelector('strong').textContent='Preferencias de privacidad';
   });
-  if(location.hash==='#FLZ-script')showScriptDetails();
+  if(location.hash==='#OBG-script')showScriptDetails();
 });
