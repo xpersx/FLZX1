@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   }else revealItems.forEach(el=>el.classList.add('is-visible'));
 
   // Scroll progress indicator.
-  const progress=document.createElement('div');progress.id='flz-scroll-progress';document.body.appendChild(progress);
+  const progress=document.createElement('div');progress.id='flz-scroll-progress';progress.innerHTML='<span id="flz-progress-spark" aria-hidden="true">⚡</span>';document.body.appendChild(progress);
   let scrollQueued=false;
   addEventListener('scroll',()=>{if(!scrollQueued){scrollQueued=true;requestAnimationFrame(()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?scrollY/max*100:0)+'%';scrollQueued=false;});}},{passive:true});
 
@@ -86,18 +86,24 @@ document.addEventListener('DOMContentLoaded',()=>{
 
   // Click sounds using Web Audio; user can toggle them. No audio files/network.
   let soundEnabled=true,audioContext=null;
-  function clickSound(){
+  function clickSound(hover=false){
     if(!soundEnabled||reduced)return;
     try{
       const AudioCtx=window.AudioContext||window.webkitAudioContext;if(!AudioCtx)return;
       audioContext=audioContext||new AudioCtx();if(audioContext.state==='suspended')audioContext.resume();
       const osc=audioContext.createOscillator(),gain=audioContext.createGain(),now=audioContext.currentTime;
-      osc.type='sine';osc.frequency.setValueAtTime(620,now);osc.frequency.exponentialRampToValueAtTime(940,now+.045);
-      gain.gain.setValueAtTime(.0001,now);gain.gain.exponentialRampToValueAtTime(.035,now+.008);gain.gain.exponentialRampToValueAtTime(.0001,now+.075);
-      osc.connect(gain);gain.connect(audioContext.destination);osc.start(now);osc.stop(now+.08);
+      osc.type='sine';osc.frequency.setValueAtTime(hover ? 390 : 520,now);osc.frequency.exponentialRampToValueAtTime(hover ? 520 : 760,now+(hover ? .075 : .055));
+      gain.gain.setValueAtTime(.0001,now);gain.gain.exponentialRampToValueAtTime(hover ? .009 : .016,now+.018);gain.gain.exponentialRampToValueAtTime(.0001,now+(hover ? .15 : .12));
+      osc.connect(gain);gain.connect(audioContext.destination);osc.start(now);osc.stop(now+(hover ? .16 : .13));
     }catch(e){}
   }
-  document.addEventListener('click',e=>{if(e.target.closest('a,button,.card,.social'))clickSound();},true);
+  document.addEventListener('click',e=>{if(e.target.closest('a,button,.card,.social'))clickSound(false);},true);
+  // Quiet hover sound starts automatically; no permission popup.
+  let lastHoverSound=0;
+  if(!mobile)document.addEventListener('pointerover',e=>{const item=e.target.closest('a,button,.card,.social,.stat');if(item&&!item.contains(e.relatedTarget)){const now=performance.now();if(now-lastHoverSound>95){lastHoverSound=now;clickSound(true);}}},{passive:true});
+
+  // Occasional decorative lightning flashes, lightweight and non-blocking.
+  if(!reduced){setInterval(()=>{if(document.hidden)return;const bolt=document.createElement('span');bolt.className='flz-ambient-bolt';bolt.textContent='⚡';bolt.style.left=(8+Math.random()*84)+'vw';bolt.style.top=(12+Math.random()*70)+'vh';document.body.appendChild(bolt);setTimeout(()=>bolt.remove(),1150);},5200);}
 
   // Draggable FLZ Script pill: pointer events work with mouse and touch.
   const widget=document.createElement('div');widget.id='flz-float-widget';
@@ -105,7 +111,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   document.body.appendChild(widget);
   const openButton=widget.querySelector('.float-open'),soundButton=widget.querySelector('.float-sound');
   openButton.addEventListener('click',e=>{e.stopPropagation();showScriptDetails();});
-  soundButton.addEventListener('click',e=>{e.stopPropagation();soundEnabled=!soundEnabled;soundButton.textContent=soundEnabled?'♫ ON':'♫ OFF';soundButton.setAttribute('aria-label',soundEnabled?'Silenciar sonidos':'Activar sonidos');if(soundEnabled)clickSound();});
+  soundButton.addEventListener('click',e=>{e.stopPropagation();soundEnabled=!soundEnabled;soundButton.textContent=soundEnabled?'♫ ON':'♫ OFF';soundButton.setAttribute('aria-label',soundEnabled?'Silenciar sonidos':'Activar sonidos');if(soundEnabled)clickSound(false);});
   let dragging=false,moved=false,startX=0,startY=0,originX=0,originY=0;
   widget.addEventListener('pointerdown',e=>{
     if(e.target.closest('button'))return;
