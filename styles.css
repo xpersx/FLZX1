@@ -36,7 +36,7 @@ footer{border-top:1px solid #ffffff12;padding:25px 0;color:#777780;font-size:11p
 
 /* Featured FLZ script cover */
 .script-featured{overflow:hidden}
-.script-cover{height:150px;border:1px solid #ffd40055;border-radius:10px;margin:0 0 18px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(circle at 50% 45%,#ffd40044,transparent 48%),linear-gradient(135deg,#21070a,#090909 65%)}
+.script-cover{height:150px;border:1px solid #ffd40055;border-radius:10px;margin:0 0 18px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(circle at 50% 45%,#ffd40044,transparent 48%),linear-gradient(135deg,#211900,#090909 65%)}
 .script-cover:before,.script-cover:after{content:"";position:absolute;width:180%;height:1px;background:linear-gradient(90deg,transparent,#ffd40099,transparent);transform:rotate(-22deg)}
 .script-cover:after{transform:rotate(22deg)}
 .cover-glow{position:absolute;width:110px;height:110px;border-radius:50%;background:#ffd40044;filter:blur(40px)}
