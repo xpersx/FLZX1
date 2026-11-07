@@ -1,7 +1,7 @@
 function showScriptDetails(){const home=document.getElementById('home'),detail=document.getElementById('detail');if(home)home.hidden=true;if(detail)detail.hidden=false;history.replaceState(null,'','#OBG-script');window.scrollTo({top:0,behavior:'smooth'});}
 function showHome(){const home=document.getElementById('home'),detail=document.getElementById('detail');if(detail)detail.hidden=true;if(home)home.hidden=false;history.replaceState(null,'',location.pathname+location.search);window.scrollTo({top:0,behavior:'smooth'});}
 document.addEventListener('DOMContentLoaded',()=>{
- const loader=document.getElementById('flz-loader');const hideLoader=()=>{if(loader){loader.classList.add('done');window.setTimeout(()=>loader.remove(),650);}};window.setTimeout(hideLoader,1250);window.addEventListener('load',hideLoader,{once:true});
+ const loader=document.getElementById('flz-loader');const hideLoader=()=>{if(loader){loader.classList.add('done');window.setTimeout(()=>loader.remove(),650);}};window.setTimeout(hideLoader,1250);
  const clock=document.getElementById('live-clock'),date=document.getElementById('live-date');
  const tf=new Intl.DateTimeFormat('es-EC',{timeZone:'America/Guayaquil',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
  const df=new Intl.DateTimeFormat('es-EC',{timeZone:'America/Guayaquil',weekday:'long',day:'2-digit',month:'long',year:'numeric'});
