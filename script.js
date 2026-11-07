@@ -2,10 +2,10 @@ function showScriptDetails(){const home=document.getElementById('home'),detail=d
 function showHome(){const home=document.getElementById('home'),detail=document.getElementById('detail');if(detail)detail.hidden=true;if(home)home.hidden=false;history.replaceState(null,'',location.pathname+location.search);window.scrollTo({top:0,behavior:'smooth'});}
 document.addEventListener('DOMContentLoaded',()=>{
  const loader=document.getElementById('flz-loader');const hideLoader=()=>{if(loader){loader.classList.add('done');window.setTimeout(()=>loader.remove(),650);}};window.setTimeout(hideLoader,1250);
- const clock=document.getElementById('live-clock'),date=document.getElementById('live-date');
+ const clock=document.getElementById('live-clock'),date=document.getElementById('live-date'),scriptDate=document.getElementById('script-date');
  const tf=new Intl.DateTimeFormat('es-EC',{timeZone:'America/Guayaquil',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
  const df=new Intl.DateTimeFormat('es-EC',{timeZone:'America/Guayaquil',weekday:'long',day:'2-digit',month:'long',year:'numeric'});
- function updateTime(){const now=new Date();if(clock)clock.textContent=tf.format(now);if(date)date.textContent=df.format(now).replace(/,/g,'').toUpperCase();}
+ function updateTime(){const now=new Date();if(clock)clock.textContent=tf.format(now);if(date)date.textContent=df.format(now).replace(/,/g,'').toUpperCase();if(scriptDate)scriptDate.textContent=new Intl.DateTimeFormat('es-EC',{timeZone:'America/Guayaquil',day:'2-digit',month:'short',year:'numeric'}).format(now).replace('.','').toUpperCase();}
  updateTime();window.setInterval(updateTime,1000);
  document.querySelectorAll('.executor-coming').forEach(card=>{const announce=()=>alert('Esta sección estará disponible próximamente.');card.addEventListener('click',announce);card.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();announce();}});});
  const featured=document.querySelector('.script-featured');if(featured){featured.addEventListener('click',event=>{if(event.target.closest('a,button'))return;showScriptDetails();});featured.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();showScriptDetails();}});}
