@@ -1,7 +1,7 @@
 function showScriptDetails(){
   document.getElementById('home').style.display='none';
   document.getElementById('detail').style.display='block';
-  history.replaceState(null,'','#obg-script');
+  history.replaceState(null,'','#FLZ-script');
   window.scrollTo({top:0,behavior:'smooth'});
 }
 function showHome(){
@@ -12,10 +12,10 @@ function showHome(){
 }
 function placeholder(event,network){
   event.preventDefault();
-  alert('Añade aquí el enlace oficial de OBG en '+network+'.');
+  alert('Añade aquí el enlace oficial de FLZ en '+network+'.');
 }
 document.addEventListener('DOMContentLoaded',function(){
-  if(location.hash==='#obg-script') showScriptDetails();
+  if(location.hash==='#FLZ-script') showScriptDetails();
 });
 
 // Smooth reveal, scroll progress and subtle pointer ambience
