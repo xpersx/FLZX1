@@ -9,14 +9,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=6">
-  <script src="script.js?v=6" defer></script>
+  <link rel="stylesheet" href="styles.css?v=7">
+  <script src="script.js?v=7" defer></script>
 </head>
 <body>
 <header><div class="wrap nav">
   <a class="brand" href="#" onclick="showHome();return false">FLZ<span>.</span></a>
   <nav class="links" aria-label="Navegación principal">
-    <a href="#executors">Ejecutores</a><a href="#scripts">Scripts</a><a href="#socials">Redes</a>
+    <a href="#executors">Ejecutores</a><a href="#scripts">Scripts</a><a href="#connections">Conexiones</a>
   </nav>
   <a class="nav-cta" href="#scripts">EXPLORAR HUB ↗</a>
 </div></header>
@@ -25,7 +25,7 @@
     <div class="eyebrow"><i class="dot"></i> FLZ SCRIPT HUB · COMUNIDAD</div>
     <h1>ENTRA A LA <span>RED</span><br>FLZ</h1>
     <p>Tu centro de scripts y recursos. Explora el sitio, descubre herramientas y encuentra todas las novedades de FLZ en un solo lugar.</p>
-    <div class="actions"><a class="primary" href="#scripts">EXPLORAR SCRIPTS ↗</a><a class="secondary" href="#socials">NUESTRAS REDES</a></div>
+    <div class="actions"><a class="primary" href="#scripts">EXPLORAR SCRIPTS ↗</a><a class="secondary" href="#connections">VER CONEXIONES</a></div>
     <div class="stats"><div class="stat"><strong>FLZ</strong><small>CENTRO DE SCRIPTS</small></div><div class="stat"><strong>01</strong><small>SCRIPT DESTACADO</small></div><div class="stat"><strong>ACTIVO</strong><small>ESTADO DEL HUB</small></div></div>
     <div class="live-dashboard" aria-label="Información en tiempo real">
       <div class="live-item"><span class="live-pulse"></span><div><small>ESTADO DEL SITIO</small><strong id="site-status">INTERFAZ CARGADA</strong></div></div>
@@ -50,9 +50,21 @@
       <article class="card"><div class="icon">✦</div><h3>Nuevos lanzamientos</h3><p>Espacio para anunciar futuras versiones y novedades.</p><span class="card-link">PRÓXIMAMENTE</span></article>
     </div>
   </section>
-  <section class="content wrap" id="socials">
-    <div class="section-top"><div><div class="kicker">MANTENTE AL DÍA</div><h2>Redes sociales</h2></div><p>Sigue las novedades de FLZ.</p></div>
-    <div class="socials"><a class="social" href="https://discord.gg/CrDuNZptYf" onclick="window.location.href='https://discord.gg/CrDuNZptYf';return false;" aria-label="Abrir servidor de Discord FLZ">Discord <span>↗</span></a><a class="social" href="https://www.youtube.com/@FLZscripts" onclick="window.location.href='https://www.youtube.com/@FLZscripts';return false;" aria-label="Abrir canal de YouTube FLZ">YouTube <span>↗</span></a><a class="social" href="#" onclick="placeholder(event,'TikTok')">TikTok <span>↗</span></a></div>
+  <section class="content wrap" id="connections">
+    <div class="section-top"><div><div class="kicker">ECOSISTEMA FLZ</div><h2>Todo conectado</h2></div><p>Un punto de conexión entre scripts, ejecutores y herramientas.</p></div>
+    <div class="neural-panel">
+      <div class="neural-copy"><span class="neural-overline">FLZ / NETWORK SYSTEM</span><h3>Un solo centro.<br><span>Múltiples conexiones.</span></h3><p>Los scripts se conectan con sus ejecutores y recursos para crear un ecosistema organizado en un solo lugar.</p><div class="neural-status"><i></i> SISTEMA DE CONEXIONES</div></div>
+      <div class="brain-visual" role="img" aria-label="Ilustración de un cerebro conectado con scripts y ejecutores">
+        <div class="brain-orbit orbit-one"></div><div class="brain-orbit orbit-two"></div>
+        <svg viewBox="0 0 440 300" aria-hidden="true">
+          <g class="brain-lines" fill="none" stroke="#d7b83d" stroke-width="1.5"><path d="M220 146 L95 65 L48 65 M220 146 L345 65 L392 65 M220 146 L95 238 L48 238 M220 146 L345 238 L392 238"/><path d="M220 146 L220 32 M220 146 L220 270" stroke-dasharray="4 7" opacity=".55"/></g>
+          <g class="brain-nodes" fill="#f2ca24"><circle cx="95" cy="65" r="4"/><circle cx="345" cy="65" r="4"/><circle cx="95" cy="238" r="4"/><circle cx="345" cy="238" r="4"/><circle cx="220" cy="32" r="3"/><circle cx="220" cy="270" r="3"/></g>
+          <g transform="translate(142 66)" fill="#17150d" stroke="#f2ca24" stroke-width="2.2" stroke-linejoin="round"><path d="M78 22c-13-16-39-11-42 8-18-2-29 15-20 30-15 12-9 35 8 39-5 20 11 35 29 30 7 16 25 18 37 5V34c-1-5-5-9-12-12z"/><path d="M78 22c13-16 39-11 42 8 18-2 29 15 20 30 15 12 9 35-8 39 5 20-11 35-29 30-7 16-25 18-37 5V34c1-5 5-9 12-12z"/><path d="M78 24v110M52 38c10 4 13 14 8 24M34 62c12 0 19 8 18 19M48 108c12-3 18 3 19 13M104 38c-10 4-13 14-8 24M122 62c-12 0-19 8-18 19M108 108c-12-3-18 3-19 13" fill="none" stroke="#d9bd50" stroke-width="2"/></g>
+          <circle cx="220" cy="146" r="83" fill="none" stroke="#d6b943" stroke-opacity=".16" stroke-width="1"/>
+        </svg>
+        <div class="brain-label label-executors"><b>01</b><span>EJECUTORES</span></div><div class="brain-label label-scripts"><b>02</b><span>SCRIPTS</span></div><div class="brain-label label-tools"><b>03</b><span>HERRAMIENTAS</span></div><div class="brain-label label-hub"><b>04</b><span>FLZ HUB</span></div>
+      </div>
+    </div>
   </section>
 </main>
 <section id="detail"><div class="wrap">
