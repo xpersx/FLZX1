@@ -73,6 +73,17 @@ document.addEventListener('DOMContentLoaded',()=>{
     const r=card.getBoundingClientRect();card.style.setProperty('--card-x',(e.clientX-r.left)+'px');card.style.setProperty('--card-y',(e.clientY-r.top)+'px');
   },{passive:true}));
 
+  // Custom cursor ring on desktop; native touch behavior remains untouched.
+  if(!mobile&&!reduced){
+    const cursor=document.createElement('div');cursor.id='flz-cursor';document.body.appendChild(cursor);
+    let cursorX=0,cursorY=0,targetX=0,targetY=0;
+    addEventListener('pointermove',e=>{targetX=e.clientX;targetY=e.clientY;cursor.classList.add('visible')},{passive:true});
+    function moveCursor(){cursorX+=(targetX-cursorX)*.24;cursorY+=(targetY-cursorY)*.24;cursor.style.left=cursorX+'px';cursor.style.top=cursorY+'px';requestAnimationFrame(moveCursor)}
+    moveCursor();
+    document.addEventListener('pointerover',e=>cursor.classList.toggle('active',!!e.target.closest('a,button,.card,.social')));
+    document.addEventListener('pointerout',e=>{if(!e.relatedTarget)cursor.classList.remove('visible')});
+  }
+
   // Click sounds using Web Audio; user can toggle them. No audio files/network.
   let soundEnabled=true,audioContext=null;
   function clickSound(){
