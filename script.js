@@ -16,7 +16,7 @@ function showHome(){
 }
 function placeholder(event,network){
   event.preventDefault();
-  alert('El enlace oficial de '+network+' todavía no está configurado.');
+  alert(network==='TikTok'?'TikTok estará disponible próximamente.':'Esta sección estará disponible próximamente.');
 }
 document.addEventListener('DOMContentLoaded',()=>{
   const clock=document.getElementById('live-clock');
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   updateTime();
   window.setInterval(updateTime,1000);
 
-  const featured=document.querySelector('.script-featured');
+  document.querySelectorAll('.executor-coming').forEach(card=>{\n    card.addEventListener('click',()=>alert('Esta sección estará disponible próximamente.'));\n    card.addEventListener('keydown',event=>{\n      if(event.key==='Enter'||event.key===' '){event.preventDefault();alert('Esta sección estará disponible próximamente.');}\n    });\n  });\n\n  const featured=document.querySelector('.script-featured');
   if(featured){
     featured.addEventListener('click',event=>{
       if(event.target.closest('a,button'))return;
