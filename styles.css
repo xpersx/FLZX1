@@ -231,3 +231,34 @@ button:focus-visible,a:focus-visible{outline:2px solid #ffe45c;outline-offset:4p
 #flz-float-widget .float-sound{display:none}
 @media(max-width:760px){#flz-progress-spark{width:18px;height:18px;font-size:14px}.flz-ambient-bolt{font-size:34px}}
 @media(prefers-reduced-motion:reduce){#flz-progress-spark,.flz-ambient-bolt{animation:none;display:none}}
+
+
+/* FLZ clean interface: less visual noise, clearer hierarchy */
+body:before,body:after,#flz-particles,#flz-cursor,#flz-float-widget,.flz-ambient-bolt{display:none!important}
+body{background:#090909!important}
+.hero{padding-top:76px;padding-bottom:44px}
+.hero h1{text-shadow:none}
+.eyebrow{box-shadow:none;background:#121108}
+.live-item{backdrop-filter:none;box-shadow:none;background:#111}
+.live-item:hover{transform:none;box-shadow:none}
+.content{padding-top:48px;padding-bottom:48px}
+.card{box-shadow:none;background:#111;border-color:#242424;min-height:190px}
+.card:before{display:none}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 22px #0006;border-color:#665800}
+.card .icon{box-shadow:none}
+.card:hover .icon{transform:none;box-shadow:none}
+.script-featured{cursor:pointer}
+.script-featured:focus-visible{outline:2px solid #ffd400;outline-offset:4px}
+.script-cover{background:linear-gradient(135deg,#191500,#0d0d0d 70%);border-color:#39300b}
+.script-cover:before,.script-cover:after{opacity:.35}
+.cover-glow{opacity:.45;filter:blur(24px)}
+.social:hover,.stat:hover{transform:translateY(-2px);box-shadow:none}
+#flz-scroll-progress{height:2px!important;box-shadow:0 0 5px #ffd40055}
+#flz-progress-spark{font-size:12px;animation:none;text-shadow:0 0 5px #ffd400}
+#flz-progress-spark:after{display:none}
+#flz-cookie-banner{box-shadow:0 12px 36px #000a;backdrop-filter:blur(10px);border-color:#5d5000}
+#flz-cookie-banner .cookie-policy-link{display:inline-flex;align-items:center;padding:10px 12px;color:#ddd;font-size:11px}
+#flz-cookie-banner .cookie-policy-link:hover{color:#ffd400}
+#flz-cookie-modal .modal-box{border-color:#5d5000}
+@media(max-width:760px){.hero{padding-top:54px}.content{padding:34px 0}.card:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
